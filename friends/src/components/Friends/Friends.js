@@ -1,13 +1,12 @@
 import React from 'react';
 
 import FriendsList from './FriendsList'
+import FriendsForm from './FriendsForm'
 
 function Friends() {
   return (
     <div>
-        <p>
-          Friends are here
-        </p>
+        <FriendsForm />
         <FriendsList />
     </div>
   );

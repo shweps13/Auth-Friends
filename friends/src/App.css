@@ -36,11 +36,15 @@
   background-color: #eeeeee;
   width: 80%;
   margin: 3% 10%;
-  padding-top: 2%;
+  padding-top: 1%;
   padding-bottom: 3%;
   border-radius: 10px;
   border: 1px solid lightgray;
 }
 #root > div > div.Links > div > button:nth-child(2) > a, #root > div > div.Links > div > button.ui.primary.button > a {
   color: white;
+}
+
+.FriendsForm {
+  padding-top: 1%;
 }
