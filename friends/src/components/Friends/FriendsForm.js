@@ -12,11 +12,12 @@ const FriendsForm = ({ errors, touched, status }) => {
     useEffect(() => {
         if (status) {
             setFriends([...friends, status]);
-            setState({...state, currentStatus: true, currentList: friends});
+            // console.log(status)
+            setState({...state, currentStatus: status, currentList: friends});
           }
         }, [status]);
     
-  
+        
         const [state, setState] = useContext(FriendsContext);
 
 

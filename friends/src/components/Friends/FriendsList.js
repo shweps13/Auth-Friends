@@ -7,15 +7,9 @@ import { FriendsContext } from '../../contexts/FriendContext'
 const FriendsList = () =>  {
 
     const [friendsList, setFriendsList] = useState([]);
-    const [updateList, setUpdateList] = useState([]);
     const [state, setState] = useContext(FriendsContext);
 
     console.log('STATE', state)
-
-    const upd = () => {
-        setUpdateList(updateList + 1)
-    }
-
 
     useEffect(() => {
         // run action creator when the component mounts
@@ -50,7 +44,6 @@ const FriendsList = () =>  {
                     </Card>
                 ))}
             </Card.Group>
-            <Button secondary onClick={upd}>Refresh</Button>
       </div>
     );
   
