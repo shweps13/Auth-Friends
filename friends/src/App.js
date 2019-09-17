@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css'
+import { Button } from 'semantic-ui-react'
 
 import Friends from './components/Friends/Friends'
 import Login from './components/Login'
@@ -17,12 +19,12 @@ function App() {
         </header>
         <div className="Links">
             <div className="LinksBlock">
-              <p>
+              <Button primary>
                 <Link to="/login">Login</Link>
-              </p>
-              <p>
+              </Button>
+              <Button secondary>
                 <Link to="/friends">Friends Page</Link>
-              </p>
+              </Button>
             </div>
         </div>
         <Switch>

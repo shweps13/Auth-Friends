@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from 'react-loader-spinner';
+import { Card } from 'semantic-ui-react'
 
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
 
@@ -29,18 +29,21 @@ class FriendsList extends React.Component  {
     render() {
 
     return (
-      <div>
+      <div className="FriendList">
           <h2>
             Friends are here
           </h2>
-          
-          {this.state.friendsList.map(friend => (
-                  <div key={friend.id}>
-                    <div>
-                      <p>{friend.name}</p>
-                    </div>
-                    </div>
+            <Card.Group centered>
+                {this.state.friendsList.map(friend => (
+                    <Card key={friend.id}>
+                        <Card.Content>
+                            <Card.Header>{friend.name}</Card.Header>
+                            <Card.Meta>Age: {friend.age}</Card.Meta>
+                            <Card.Description>Email: {friend.email}</Card.Description>
+                        </Card.Content>
+                    </Card>
                 ))}
+            </Card.Group>
       </div>
     );
   }
