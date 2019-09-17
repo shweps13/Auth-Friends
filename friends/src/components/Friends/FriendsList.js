@@ -7,12 +7,17 @@ import { axiosWithAuth } from '../../utilites/axiosWithAuth';
 const FriendsList = () =>  {
 
     const [friendsList, setFriendsList] = useState([]);
-    console.log(friendsList)
+    const [updateList, setUpdateList] = useState([]);
+
+    const upd = () => {
+        setUpdateList(updateList + 1)
+    }
+
 
     useEffect(() => {
         // run action creator when the component mounts
         getData();
-      }, []);
+      }, [updateList]);
     
     const getData = () => {
         axiosWithAuth()
@@ -42,6 +47,7 @@ const FriendsList = () =>  {
                     </Card>
                 ))}
             </Card.Group>
+            <Button secondary onClick={upd}>Refresh</Button>
       </div>
     );
   

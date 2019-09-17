@@ -32,7 +32,10 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="LoginBlock">
+        <h2>
+            Login to Friends page
+          </h2>
         <form onSubmit={this.login}>
           <input
             type="text"

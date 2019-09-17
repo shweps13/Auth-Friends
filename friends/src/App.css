@@ -41,10 +41,21 @@
   border-radius: 10px;
   border: 1px solid lightgray;
 }
+
+.FriendsForm {
+  padding-top: 1%;
+}
+
+/* Angry selectors of buttons */
+
 #root > div > div.Links > div > button:nth-child(2) > a, #root > div > div.Links > div > button.ui.primary.button > a {
   color: white;
 }
 
-.FriendsForm {
-  padding-top: 1%;
+#root > div > div:nth-child(3) > div.FriendList > button {
+  margin-top: 4%;
+}
+
+#root > div > div:nth-child(3) > div.FriendsForm > form > button {
+  margin-left: 3%;
 }

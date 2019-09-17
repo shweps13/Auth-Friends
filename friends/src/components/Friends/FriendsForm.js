@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import { Button } from 'semantic-ui-react'
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
 
 const FriendsForm = ({ errors, touched, status }) => {
-    // const [friends, setFriends] = useState([]);
-  
+    const [friends, setFriends] = useState([]);
+    console.log('Here is the form things: ', friends)
     // useEffect(() => {
     //     if (status) {
     //         setFriends([...friends, status]);
