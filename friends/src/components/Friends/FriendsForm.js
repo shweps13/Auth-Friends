@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import { Button } from 'semantic-ui-react'
+
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
+import { FriendsContext } from '../../contexts/FriendContext'
 
 const FriendsForm = ({ errors, touched, status }) => {
     const [friends, setFriends] = useState([]);
@@ -10,9 +12,14 @@ const FriendsForm = ({ errors, touched, status }) => {
     useEffect(() => {
         if (status) {
             setFriends([...friends, status]);
+            setState({...state, currentStatus: true, currentList: friends});
           }
         }, [status]);
+    
   
+        const [state, setState] = useContext(FriendsContext);
+
+
     return (
         <div className="FriendsForm">
             <h2>Add a Friend</h2>

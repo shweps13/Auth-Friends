@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Card, Button } from 'semantic-ui-react'
 
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
-
+import { FriendsContext } from '../../contexts/FriendContext'
 
 const FriendsList = () =>  {
 
     const [friendsList, setFriendsList] = useState([]);
     const [updateList, setUpdateList] = useState([]);
+    const [state, setState] = useContext(FriendsContext);
+
+    console.log('STATE', state)
 
     const upd = () => {
         setUpdateList(updateList + 1)
@@ -17,7 +20,7 @@ const FriendsList = () =>  {
     useEffect(() => {
         // run action creator when the component mounts
         getData();
-      }, [updateList]);
+      }, [state.currentStatus]);
     
     const getData = () => {
         axiosWithAuth()
