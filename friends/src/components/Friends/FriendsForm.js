@@ -6,12 +6,12 @@ import { axiosWithAuth } from '../../utilites/axiosWithAuth';
 
 const FriendsForm = ({ errors, touched, status }) => {
     const [friends, setFriends] = useState([]);
-    console.log('Here is the form things: ', friends)
-    // useEffect(() => {
-    //     if (status) {
-    //         setFriends([...friends, status]);
-    //       }
-    //     }, [status, friends]);
+    console.log('Here is the form things: ', friends)   
+    useEffect(() => {
+        if (status) {
+            setFriends([...friends, status]);
+          }
+        }, [status]);
   
     return (
         <div className="FriendsForm">
@@ -36,6 +36,7 @@ const FriendsForm = ({ errors, touched, status }) => {
   };
   
   const FormikUserForm = withFormik({
+
     mapPropsToValues({ name, age, email }) {
       return {
         name: name || '',
@@ -52,6 +53,7 @@ const FriendsForm = ({ errors, touched, status }) => {
   
     handleSubmit(values, { setStatus }) {
         
+
         axiosWithAuth()
         .post('/friends', values)
         .then(res => {
