@@ -20,12 +20,15 @@ function App() {
                 <Link to="/login">Login</Link>
               </p>
               <p>
-                <Link to="/protected">Friends Page</Link>
+                <Link to="/friends">Friends Page</Link>
               </p>
             </div>
         </div>
-        <Login />
-        <Friends />
+        <Switch>
+          <Route exact path="/friends" component={Friends} />
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
+        </Switch>
       </div>
     </Router>
   );
