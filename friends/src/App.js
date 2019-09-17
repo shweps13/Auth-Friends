@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import Friends from './components/Friends'
 import Login from './components/Login'
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             </div>
         </div>
         <Switch>
-          <Route exact path="/friends" component={Friends} />
+          <PrivateRoute exact path="/friends" component={Friends} />
           <Route path="/login" component={Login} />
           <Route component={Login} />
         </Switch>
