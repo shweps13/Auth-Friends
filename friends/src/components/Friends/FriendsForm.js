@@ -26,7 +26,7 @@ const FriendsForm = ({ errors, touched, status }) => {
                 <Field type="number" name="age" placeholder="Age" />
                 {touched.age && errors.age && <p className="error">{errors.age}</p>}
 
-                <Field type="text" name="email" placeholder="Email" />
+                <Field type="email" name="email" placeholder="Email" />
                 {touched.email && errors.email && <p className="error">{errors.email}</p>}
 
                 <Button primary type="submit">Submit!</Button>

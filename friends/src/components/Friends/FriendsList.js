@@ -1,32 +1,30 @@
-import React from 'react';
-import { Card } from 'semantic-ui-react'
+import React, { useEffect, useState } from 'react';
+import { Card, Button } from 'semantic-ui-react'
 
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
 
 
-class FriendsList extends React.Component  {
-    state = {
-        friendsList: []
-      };
-    
-    componentDidMount() {
-        this.getData();
-    }
+const FriendsList = () =>  {
 
-    getData = () => {
+    const [friendsList, setFriendsList] = useState([]);
+    console.log(friendsList)
+
+    useEffect(() => {
+        // run action creator when the component mounts
+        getData();
+      }, []);
+    
+    const getData = () => {
         axiosWithAuth()
           .get('/friends')
           .then(res => {
               console.log("List of friends: ", res.data);
-            this.setState({
-                friendsList: res.data
-            })
+              setFriendsList(res.data);
           })
           .catch(err => console.log(err));
     };
 
 
-    render() {
 
     return (
       <div className="FriendList">
@@ -34,7 +32,7 @@ class FriendsList extends React.Component  {
             Friends are here
           </h2>
             <Card.Group centered>
-                {this.state.friendsList.map(friend => (
+                {friendsList.map(friend => (
                     <Card key={friend.id}>
                         <Card.Content>
                             <Card.Header>{friend.name}</Card.Header>
@@ -46,6 +44,6 @@ class FriendsList extends React.Component  {
             </Card.Group>
       </div>
     );
-  }
+  
 }
   export default FriendsList;
