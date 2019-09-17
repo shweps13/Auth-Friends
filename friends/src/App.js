@@ -7,15 +7,27 @@ import Login from './components/Login'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          Friends App
-        </h1>
-      </header>
-      <Login />
-      <Friends />
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>
+            Friends App
+          </h1>
+        </header>
+        <div className="Links">
+            <div className="LinksBlock">
+              <p>
+                <Link to="/login">Login</Link>
+              </p>
+              <p>
+                <Link to="/protected">Friends Page</Link>
+              </p>
+            </div>
+        </div>
+        <Login />
+        <Friends />
+      </div>
+    </Router>
   );
 }
 
