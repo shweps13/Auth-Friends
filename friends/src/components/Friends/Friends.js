@@ -1,5 +1,6 @@
 import React from 'react';
 
+import FriendsList from './FriendsList'
 
 function Friends() {
   return (
@@ -7,6 +8,7 @@ function Friends() {
         <p>
           Friends are here
         </p>
+        <FriendsList />
     </div>
   );
 }
