@@ -9,6 +9,11 @@ import Login from './components/Login'
 import PrivateRoute from './components/PrivateRoute'
 
 function App() {
+
+  const logout = () => {
+    window.localStorage.removeItem('token')
+  }
+
   return (
     <Router>
       <div className="App">
@@ -24,6 +29,9 @@ function App() {
               </Button>
               <Button secondary>
                 <Link to="/friends">Friends Page</Link>
+              </Button>
+              <Button primary onClick={logout}>
+                <Link to="/login">Log Out</Link>
               </Button>
             </div>
         </div>

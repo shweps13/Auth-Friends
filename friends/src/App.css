@@ -26,8 +26,8 @@
 
 .LinksBlock {
   display: flex;
-  width: 30%;
-  margin: 0 35%;
+  width: 50%;
+  margin: 0 25%;
   justify-content: space-around;
 
 }
@@ -48,7 +48,9 @@
 
 /* Angry selectors of buttons */
 
-#root > div > div.Links > div > button:nth-child(2) > a, #root > div > div.Links > div > button.ui.primary.button > a {
+#root > div > div.Links > div > button:nth-child(2) > a,
+#root > div > div.Links > div > button.ui.primary.button > a,
+#root > div > div.Links > div > button:nth-child(3) > a {
   color: white;
 }
 
