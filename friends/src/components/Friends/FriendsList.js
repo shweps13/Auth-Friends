@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Card, Button } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
 import { FriendsContext } from '../../contexts/FriendContext';
