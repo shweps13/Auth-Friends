@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Links {
+  background-color: rgb(245, 245, 245);
+  padding: 1% 0;
+  border-bottom: 1px solid lightgray;
+  
+}
+
+.LinksBlock {
+  display: flex;
+  width: 50%;
+  margin: 0 25%;
+  justify-content: space-around;
+
+}
+
+.FriendList {
+  background-color: #f7f5f5;
+  width: 80%;
+  margin: 3% 10%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+
+.FriendsForm {
+  padding-top: 1%;
+}
+
+/* Angry selectors of buttons */
+
+#root > div > div.Links > div > button:nth-child(2) > a,
+#root > div > div.Links > div > button.ui.primary.button > a,
+#root > div > div.Links > div > button:nth-child(3) > a {
+  color: white;
+}
+
+#root > div > div:nth-child(3) > div.FriendList > button {
+  margin-top: 4%;
+}
+
+#root > div > div:nth-child(3) > div.FriendsForm > form > button {
+  margin-left: 3%;
+}
