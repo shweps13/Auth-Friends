@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Card, Button } from 'semantic-ui-react'
 
 import { axiosWithAuth } from '../../utilites/axiosWithAuth';
-import { FriendsContext } from '../../contexts/FriendContext'
+import { FriendsContext } from '../../contexts/FriendContext';
+import FriendCard from './FriendCard'
 
 const FriendsList = () =>  {
 
@@ -14,7 +15,7 @@ const FriendsList = () =>  {
     useEffect(() => {
         // run action creator when the component mounts
         getData();
-      }, [state.currentStatus]);
+      }, [state]);
     
     const getData = () => {
         axiosWithAuth()
@@ -35,13 +36,7 @@ const FriendsList = () =>  {
           </h2>
             <Card.Group centered>
                 {friendsList.map(friend => (
-                    <Card key={friend.id}>
-                        <Card.Content>
-                            <Card.Header>{friend.name}</Card.Header>
-                            <Card.Meta>Age: {friend.age}</Card.Meta>
-                            <Card.Description>Email: {friend.email}</Card.Description>
-                        </Card.Content>
-                    </Card>
+                    <FriendCard id={friend.id} key={friend.id} name={friend.name} age={friend.age} email={friend.email} setState={setState}/>
                 ))}
             </Card.Group>
       </div>

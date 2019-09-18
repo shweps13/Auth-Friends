@@ -8,7 +8,7 @@ import { FriendsContext } from '../../contexts/FriendContext'
 
 const FriendsForm = ({ errors, touched, status }) => {
     const [friends, setFriends] = useState([]);
-    console.log('Here is the form things: ', friends)   
+
     useEffect(() => {
         if (status) {
             setFriends([...friends, status]);
